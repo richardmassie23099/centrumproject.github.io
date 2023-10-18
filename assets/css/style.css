@@ -424,7 +424,7 @@ h6 {
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+  /* padding-bottom: 40px; */
   text-align: center;
 }
 
@@ -996,9 +996,9 @@ section {
 }
 
 .counts .image {
-  background: url("../img/counts-img.jpg") center center no-repeat;
+  background: url("../img/counts-img1.jpg") center center no-repeat;
   background-size: cover;
-  min-height: 400px;
+  min-height: 200px;
 }
 
 @media (max-width: 991px) {
