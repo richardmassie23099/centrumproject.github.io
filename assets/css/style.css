@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-color: rgb(190, 175, 135);
 }
 
 a {
@@ -647,8 +648,8 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   overflow: hidden;
+  /* position: relative; */
 }
 
 /*--------------------------------------------------------------
