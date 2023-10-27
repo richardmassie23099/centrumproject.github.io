@@ -1,12 +1,33 @@
-/**
-* Template Name: Gp
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
+
+  /**
+   * Contact Form 
+   */
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzgjVo5h9-wP-Eazfj8K3V5bqqWw3ZtapaB4NlCJKr4tpcxTUmci4tLfTcMNkRy-O4m/exec'
+      const form = document.forms['c21-contact-form']
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // kembalikan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // tampilkan alert
+            myAlert.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            console.log('Success!', response)
+        })
+          .catch(error => console.error('Error!', error.message))
+      });
 
   /**
    * Easy selector helper function
